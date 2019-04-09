@@ -1,0 +1,99 @@
+
+.background{
+    background-color: #3f6d64;
+}
+
+.main-content-div{
+    margin: 5px;
+    padding: 5px;
+    text-align: justify;
+}
+
+.row-override{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.nav-ver{
+    text-align: left;
+    display: block;
+}
+
+.table-width{
+    width: 25%;
+}
+
+
+nav{
+    margin: 2px 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    text-align: center;
+    padding: 10px;
+    background-color: #990f1d;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.text-align-left{
+    text-align: left;
+}
+
+.button-link{
+    background: none!important;
+    border: none;
+}
+
+.color-red{
+    color: red;
+}
+
+.footer{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    clear: both;
+    margin: 2px 0px 5px;
+}
+
+.header-span{
+    float: right;
+    padding: 2px;
+    width: 100%;
+    text-align: right;
+}
+
+.nav-spans{
+    font-size: larger;
+    margin: 4px;
+}
+
+.nav-div{
+    margin: 0 auto;
+}
+
+
+.visibility{
+    display: none;
+}
+
+
+.bolder{
+    font-weight: bolder;
+}
+
+.checked {
+    color: orange;
+}
+

@@ -1,0 +1,114 @@
+use Music
+
+db.createCollection('users');
+db.createCollection('items');
+db.createCollection('users_profiles');
+
+
+db.users.insert({
+    userId: "1",
+    password: "password123",
+    firstName: "Chirag",
+    lastName: "Jain",
+    email: "cjain4@uncc.edu",
+    address1: "9543 University Terrace Dr",
+    address2: "Apt K",
+    city: "Charlotte",
+    state: "North Carolina",
+    zipCode: 28262,
+    country: "United States"
+})
+
+//items database
+db.items.insertMany([
+{
+  itemCode:1,
+  itemName:'Norms MDRS7LP/WHI Earphone',
+  catalogCategory:'Earphones',
+  description:'1 Year Warranty 30 Days Money Back guarantee.Strong Stereo, Bass Driven Sound. YSM1000 Headphones provides Powerful bass enhanced sound with superb musical detail.These Headphones are ideal for use with iPhone, iPad, iPod and Samsung devices ( Remote control is compatible with Samsung and Apple devices only)',
+  rating:4,
+  imageUrl:'/images/earphone.jpg',
+},
+{
+  itemCode:2,
+  itemName:'Norms MBRXR510Z Extra Bass Wired Earphone',
+  catalogCategory:'Earphones',
+  description:'12mm dome type driver units deliver powerful deep bass. Connectivity',
+  rating:3,
+  imageUrl:'/images/earphone2.jpg',
+},
+{
+  itemCode:3,
+  itemName:'Norms Canal type Earphone MZR-EX120',
+  catalogCategory:'Earphones',
+  description:'Newly developed Hi-SPEED twin system unit deliver high quality sound.',
+  rating:5,
+  imageUrl:'/images/earphone3.jpg',
+},
+{
+  itemCode:4,
+  itemName:'Norms Dimension Wireless Bluetooth Over Ear Headphones',
+  catalogCategory:'Headphones',
+  description:'The first Bluetooth wireless, over-ear headphones perfected for home',
+  rating:2,
+  imageUrl:'/images/Headphone1.jpg',
+},
+{
+  itemCode:'5',
+  itemName:'Norms Noise Cancelling Headphones WH10130XM3',
+  catalogCategory:'Headphones',
+  description:'Earcups electronically cancel out the ambient noise by up to 85% for y...',
+  rating:5,
+  imageUrl:'/images/Headphone2.jpg',
+},
+{
+  itemCode:'6',
+  itemName:'Norms CQ4 Active On Ear Wired',
+  catalogCategory:'Headphones',
+  description:'Hear Less, Hear More: Quietist-Tech noise-cancelling technology reduce...',
+  rating:4,
+  imageUrl:'/images/Headphone3.jpg',
+}
+]);
+
+db.users_profiles.insert({
+userId:"1",
+userItemList : [
+{
+  itemCode:1,
+  itemName:'Norms MDRS7LP/WHI Earphone',
+  catalogCategory:'Earphones',
+  rating:4,
+  madeIt:true
+},
+{
+  itemCode:3,
+  itemName:'Norms Canal type Earphone MZR-EX120',
+  catalogCategory:'Earphones',
+  rating:5,
+  madeIt:true
+},
+{
+  itemCode:6,
+  itemName:'Norms CQ4 Active On Ear Wired',
+  catalogCategory:'Headphones',
+  rating:4,
+  madeIt:false
+}
+
+]
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+

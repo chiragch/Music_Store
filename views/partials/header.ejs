@@ -1,0 +1,8 @@
+<header class="card-header header">
+    <% if(data==undefined || data.user==null){%>
+        <span class="header-span">Not Logged In</span>
+    <%}else{%>
+        <span class="header-span"><%= data.user.firstName+' '+data.user.lastName%></span>
+    <% } %>
+    <h1><img src="/images/logo.jpg" alt="Logo" height="70" width="100"> Norm's Musically</h1>
+</header>

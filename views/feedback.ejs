@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Norm Music</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <% include ./partials/header.ejs %>
+        <% include ./partials/site-navigation.ejs %>
+        <div class="row row-override">
+            <% include ./partials/user-navigation.ejs %>
+            <main class="col-sm-9">
+                <h3>Give your feedback for</h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="<%= data.item.imageUrl%>" alt="<%= data.item.itemName%>" height="200"/>
+                    </div>
+                    <div class="col-sm-9">
+                        <h4 class="bolder"><%= data.item.itemName%></h4>
+                        <h5><%= data.item.catalogCategory%></h5>
+                        <p><%= data.item.description[0]%></p>
+                    </div>
+                </div>
+                
+                <form method="POST" action="/update/feedback/<%= data.item.itemCode%>">
+                    <input type="hidden" id="ratingHidden" name="feedbackHidden" value="rating">
+                    <input type="hidden" name="itemCode" value="<%= data.item.itemCode%>">
+                    <input type="hidden" name="itemList" value="<%= data.item.itemCode%>">
+                    <div class="form-group row">
+                        <label for="staticRating" class="col-md-2 col-form-label">Rating</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="ratingSelect" name="rating">
+                            <option value="0">0 Star</option>
+                            <option value="1">1 Star</option>
+                            <option value="2">2 Star</option>
+                            <option value="3">3 Star</option>
+                            <option value="4">4 Star</option>
+                            <option value="5">5 Star</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary main-content-div">Confirm Rating</button>
+                        </div>
+                    </div>
+                </form>
+                <%# <div class="col-md-9 offset-md-3">
+                    <div class="col-md-3 offset-md-7">
+                        <a href="#" class="btn btn-primary main-content-div">I Used it <i class="fa fas fa-check-circle"></i></a>
+                    </div>
+                </div> %>
+                <form method="POST" action="/update/feedback/<%= data.item.itemCode%>">
+                    <input type="hidden" id="madeItHidden" name="feedbackHidden" value="madeIt">
+                    <input type="hidden" name="itemCode" value="<%= data.item.itemCode%>">
+                    <input type="hidden" name="itemList" value="<%= data.item.itemCode%>">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="madeItRadio" id="madeIt1" value="true">
+                        <label class="form-check-label" for="madeIt1">True</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="madeItRadio" id="madeIt2" value="false">
+                        <label class="form-check-label" for="madeIt2">False</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <button type="submit" class="btn btn-primary main-content-div">Used It</button>
+                    </div>
+                </form>
+                <div class="row">
+                    <a href="/categories" class="btn btn-primary main-content-div">Back</a>
+                </div>
+            </main>
+        </div>
+        <% include ./partials/footer.ejs %>
+    </div>
+</body>
+</html>
